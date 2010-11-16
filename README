@@ -1,0 +1,7 @@
+== Firminer
+
+is a small library designed to crawl all companies from a category at firmy.cz
+                                           
+== Use
+
+Put a csv file with two columns - category name and category full url - to data/categories.csv and run firminer.rb
