@@ -8,7 +8,7 @@ class CrawledRecord
   def initialize(page)
     doc = page.doc
     @name = CrawledRecord.get_from_css(doc, '#firmCont h2')
-    @email = CrawledRecord.get_from_css(doc, '#cont .email a')
+	@email = CrawledRecord.get_from_css(doc, '#cont .contactBlock .email a')
     @address = "#{CrawledRecord.get_from_css(doc, '.info .adr .street-address')} #{CrawledRecord.get_from_css(doc, '.info .adr .postal-code')} #{CrawledRecord.get_from_css(doc, '.info .adr .locality')}"
     @description = CrawledRecord.get_from_css(doc, '#firmCont .description')
     @www = CrawledRecord.get_from_css(doc, '#firmCont .web a')
