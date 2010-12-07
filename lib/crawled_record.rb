@@ -10,6 +10,7 @@ class CrawledRecord
     @name = CrawledRecord.get_from_css(doc, '#firmCont h2')
 	@email = CrawledRecord.get_from_css(doc, '#cont .contactBlock .email a')
     @address = "#{CrawledRecord.get_from_css(doc, '.info .adr .street-address')} #{CrawledRecord.get_from_css(doc, '.info .adr .postal-code')} #{CrawledRecord.get_from_css(doc, '.info .adr .locality')}"
+	@phone = CrawledRecord.get_from_css(doc, '#cont .tel .value')
     @description = CrawledRecord.get_from_css(doc, '#firmCont .description')
     @www = CrawledRecord.get_from_css(doc, '#firmCont .web a')
     @url = page.url.to_s
@@ -24,6 +25,6 @@ class CrawledRecord
   end
 
   def to_csv
-    [@name, @email, @address, @description, @www, @url].to_csv(:col_sep => ";")
+    [@name, @email, @address, @description, @www, @url, @phone].to_csv(:col_sep => ";")
   end
 end
